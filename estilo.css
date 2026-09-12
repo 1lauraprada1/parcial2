@@ -1,0 +1,262 @@
+/*  GENERAL */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("../img/fondo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem 5%;
+}
+
+
+/*MENÚ DE NAVEGACIÓN*/
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.menu {
+    width: 100%;
+    max-width: 75rem;
+    background-color: rgba(30, 30, 50, 0.9);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Arvo", serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   CONTENIDO GENERAL
+   ============================== */
+
+main {
+    width: 100%;
+    max-width: 75rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 3rem;
+
+    background-color: rgba(20, 20, 35, 0.88);
+    border-radius: 1rem;
+    padding: 3rem;
+}
+
+
+/* TÍTULOS */
+
+h1,
+h2 {
+    font-family: "Arvo", serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+/* ==============================
+   TEXTOS
+   ============================== */
+
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.destacado {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-left: 0.3rem solid #ffffff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+mark {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #202033;
+    padding: 0.3rem 0.6rem;
+}
+
+
+/* ==============================
+   PÁGINA DE INICIO
+   ============================== */
+
+.contenido {
+    width: 65%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main > section:last-child {
+    width: 35%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > section:last-child img {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    border-radius: 0.8rem;
+}
+
+
+/* ==============================
+   PÁGINA DE OBRAS
+   ============================== */
+
+.obras {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.obras ol {
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    line-height: 2;
+}
+
+.obras > section {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.obras > section img {
+    width: 45%;
+    height: auto;
+    border-radius: 0.8rem;
+}
+
+.obras h2 {
+    text-align: left;
+}
+
+
+/* ==============================
+   PÁGINA DATOS CURIOSOS
+   ============================== */
+
+.contenedor {
+    width: 100%;
+    max-width: 75rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.datos {
+    width: 65%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor > section:last-child {
+    width: 35%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor > section:last-child img {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    border-radius: 0.8rem;
+}
+
+
+/* ==============================
+   PIE DE PÁGINA
+   ============================== */
+
+footer {
+    width: 100%;
+    max-width: 75rem;
+
+    background-color: rgba(30, 30, 50, 0.9);
+    border-radius: 1rem;
+
+    text-align: center;
+    padding: 1.5rem;
+
+    margin-top: 2rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: #ffffff;
+    font-weight: bold;
+}
