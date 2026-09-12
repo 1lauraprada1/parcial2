@@ -23,17 +23,21 @@
     <nav class="menu">
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="sistemas.html">Obras</a></li>
+            <li><a href="obras.html">Obras</a></li>
             <li><a href="datos.html">Datos curiosos</a></li>
         </ul>
     </nav>
 </header>
+<!-- boton y/de datos cueriosos -->
 
 <main class="contenedor">
 
     <section class="datos">
 
         <h1>Datos curiosos</h1>
+        <div id="datoCurioso"></div>
+
+<button id="nuevoDato">Nuevo dato curioso</button>
 
         <p>
             Casey Reas es co-creador de Processing, un lenguaje de programación visual diseñado para
@@ -70,12 +74,21 @@
         </p>
 
     </section>
-    <section>
-        <img src="img/reas-3.jpg" alt="obra">
-        
-    </section>
+   <section class="instalaciones">
 
+    <h2>Producción de instalaciones</h2>
+
+    <p>Ingresá la cantidad de instalaciones que querés producir:</p>
+
+    <input type="number" id="cantidadInstalaciones">
+
+    <button id="comenzar">Comenzar</button>
+
+    <div id="instalaciones"></div>
+
+</section>
 </main>
+<!--pie de página -->
 
 <footer>
     <p>
@@ -84,7 +97,7 @@
     </p>
 </footer>
 ```
-
+<script src="js/instalacion.js"></script>
 </body>
 
 </html>
