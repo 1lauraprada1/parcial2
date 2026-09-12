@@ -147,3 +147,107 @@ function mostrarDatosGenerales() {
 
     calcular.addEventListener("click", calcularResultados);
 }
+function calcularResultados() {
+
+    let horas = Number(document.querySelector("#horas").value);
+    let honorario = Number(document.querySelector("#honorario").value);
+
+    // Validamos los datos generales
+    if (horas < 1 || honorario < 1) {
+        alert("Ingresá correctamente las horas y el honorario.");
+        return;
+    }
+
+    // 1. Calculamos el costo de un día de trabajo
+    let totalPersonas = 0;
+
+    for (let i = 0; i < instalaciones.length; i++) {
+        totalPersonas += instalaciones[i].personas;
+    }
+
+    let costoDia = totalPersonas * horas * honorario;
+
+
+    // 2. Buscamos la instalación que necesita más días
+    let instalacionMayor = instalaciones[0];
+
+    for (let i = 1; i < instalaciones.length; i++) {
+
+        if (instalaciones[i].dias > instalacionMayor.dias) {
+            instalacionMayor = instalaciones[i];
+        }
+    }
+
+
+    // Calculamos el costo de la instalación que más días necesita
+    let costoInstalacionMayor =
+        instalacionMayor.personas *
+        horas *
+        honorario *
+        instalacionMayor.dias;
+
+
+    // Calculamos el costo total de todas las instalaciones
+    let costoTotal = 0;
+
+    for (let i = 0; i < instalaciones.length; i++) {
+
+        costoTotal +=
+            instalaciones[i].personas *
+            horas *
+            honorario *
+            instalaciones[i].dias;
+    }
+
+
+    // 3. Calculamos el porcentaje
+    let porcentaje =
+        (costoInstalacionMayor / costoTotal) * 100;
+
+
+    // Mostramos los resultados
+    let contenedor = document.querySelector("#instalaciones");
+
+    contenedor.innerHTML = `
+        <h2>Resultados</h2>
+
+        <p>
+            <strong>Costo total de un día de trabajo:</strong>
+            $${costoDia}
+        </p>
+
+        <p>
+            <strong>Instalación que necesita más días:</strong>
+            ${instalacionMayor.nombre}
+        </p>
+
+        <p>
+            <strong>Días de producción:</strong>
+            ${instalacionMayor.dias}
+        </p>
+
+        <p>
+            <strong>Costo total de esa instalación:</strong>
+            $${costoInstalacionMayor}
+        </p>
+
+        <p>
+            <strong>Porcentaje del costo total:</strong>
+            ${porcentaje.toFixed(2)}%
+        </p>
+
+        <button id="reiniciar">Reiniciar</button>
+    `;
+
+
+    // Habilitamos el botón Reiniciar
+    let reiniciar = document.querySelector("#reiniciar");
+
+    reiniciar.addEventListener("click", reiniciarPrograma);
+}
+
+
+// Función para reiniciar todo
+function reiniciarPrograma() {
+    location.reload();
+}
