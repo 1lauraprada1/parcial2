@@ -136,24 +136,34 @@ mark {
    PÁGINA DE INICIO
    ============================== */
 
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+main > section {
+    width: 30%;
+}
+
 .contenido {
-    width: 65%;
+    width: 30%;
 
     display: flex;
     flex-direction: column;
 }
 
 main > section:last-child {
-    width: 35%;
+    width: 30%;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 main > section:last-child img {
     width: 100%;
-    max-width: 25rem;
+    max-width: 30rem;
     height: auto;
     border-radius: 0.8rem;
 }
@@ -163,41 +173,58 @@ main > section:last-child img {
    PÁGINA DE OBRAS
    ============================== */
 
-.obras {
+main.contenido-obras {
     width: 100%;
+    max-width: none;
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+
+    gap: 0;
+    padding: 0;
+
+    background-color: transparent;
 }
 
-.obras ol {
-    padding-left: 2rem;
-    margin-bottom: 2rem;
-    line-height: 2;
-}
+/* COLUMNA IZQUIERDA */
 
-.obras > section {
+.contenido-obras .informacion {
     width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 2rem;
 
-    gap: 2rem;
+    background-color: rgba(20, 20, 35, 0.88);
+}
+
+/* COLUMNA DERECHA */
+
+.contenido-obras #galeria {
+    width: 100%;
+     height: 100%;
+    padding: 2rem;
+
+    background-color: rgba(20, 20, 35, 0.88);
+}
+
+/* IMÁGENES DE LA GALERÍA */
+
+#galeria div {
     margin-bottom: 2rem;
 }
 
-.obras > section img {
-    width: 45%;
+#galeria img {
+     width: 50%;
+    max-width: 45%;
     height: auto;
-    border-radius: 0.8rem;
+    border-radius: 0.6rem;
 }
 
 .obras h2 {
     text-align: left;
 }
-
-
 /* ==============================
    PÁGINA DATOS CURIOSOS
    ============================== */
